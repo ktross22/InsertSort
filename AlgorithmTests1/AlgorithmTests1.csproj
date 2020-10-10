@@ -56,7 +56,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="InterSortTest.cs" />
+    <Compile Include="SortTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
