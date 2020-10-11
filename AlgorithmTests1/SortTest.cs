@@ -8,29 +8,28 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AlgorithmTests1
 {
-    [TestClass()]
-    public class SortTests
-
-    {
-        Random rnd = new Random();
-        List<int> Items = new List<int>();
-        List<int> Sorted = new List<int>();
-
-        [TestInitialize()]
-        public void Init()
+        [TestClass()]
+        public class SortTests
         {
-            Items.Clear();
-            for (int i = 0; i < 10000; i++)
+            Random rnd = new Random();
+            List<int> Items = new List<int>();
+            List<int> Sorted = new List<int>();
 
+            [TestInitialize]
+            public void Init()
             {
-                Items.Add(rnd.Next(0, 1000));
+                Items.Clear();
+                for (int i = 0; i < 10000; i++)
+                {
+                    Items.Add(rnd.Next(0, 1000));
+                }
+
+                Sorted.Clear();
+                Sorted.AddRange(Items.OrderBy(x => x).ToArray());
             }
-            Sorted.Clear();
-            Sorted.AddRange(Items.OrderBy(x => x).ToArray());
-        }
 
 
-        [TestMethod()]
+            [TestMethod()]
         public void BubbleTest()
         {
             //arrange
@@ -132,5 +131,26 @@ namespace AlgorithmTests1
             }
         }
 
+    
+
+    [TestMethod()]
+    public void TreeSortTest()
+    {
+        //arrange
+        var tree = new TreeSort<int>();
+
+        tree.Items.AddRange(Items);
+
+
+        //act
+        tree.Sort();
+
+        // assert
+        for (int i = 0; i < Items.Count; i++)
+        {
+            Assert.AreEqual(Sorted[i], tree.Items[i]);
+        }
     }
+
+}
 }
