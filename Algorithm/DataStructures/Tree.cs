@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithm.DataStructures
 {
-    class Tree<T>
+   public class Tree<T>
         where T: IComparable
     {
         public Node<T> Root { get; private set; }

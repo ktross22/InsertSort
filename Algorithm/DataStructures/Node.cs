@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Algorithm.DataStructures
 {
 
-        class Node<T> : IComparable
+        public class Node<T> : IComparable
         where T : IComparable
         {
             public T Data { get; private set; }
