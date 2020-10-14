@@ -30,17 +30,13 @@ namespace AlgorithmTests1
 
 
         [TestMethod()]
-        public void BubbleTest()
+        public void BubbleSortTest()
         {
-            //arrange
+            // arrange
             var bubble = new BubbleSort<int>();
-
-
-
             bubble.Items.AddRange(Items);
 
-
-            //act
+            // act
             bubble.Sort();
 
             // assert
@@ -49,18 +45,15 @@ namespace AlgorithmTests1
                 Assert.AreEqual(Sorted[i], bubble.Items[i]);
             }
         }
+
         [TestMethod()]
         public void CocktailSortTest()
         {
-            //arrange
+            // arrange
             var cocktail = new CocktailSort<int>();
-
-
-
             cocktail.Items.AddRange(Items);
 
-
-            //act
+            // act
             cocktail.Sort();
 
             // assert
@@ -73,15 +66,11 @@ namespace AlgorithmTests1
         [TestMethod()]
         public void InsertSortTest()
         {
-            //arrange
+            // arrange
             var insert = new InsertSort<int>();
-
-
-
             insert.Items.AddRange(Items);
 
-
-            //act
+            // act
             insert.Sort();
 
             // assert
@@ -90,18 +79,15 @@ namespace AlgorithmTests1
                 Assert.AreEqual(Sorted[i], insert.Items[i]);
             }
         }
+
         [TestMethod()]
         public void ShellSortTest()
         {
-            //arrange
+            // arrange
             var shell = new ShellSort<int>();
-
-
-
             shell.Items.AddRange(Items);
 
-
-            //act
+            // act
             shell.Sort();
 
             // assert
@@ -110,18 +96,15 @@ namespace AlgorithmTests1
                 Assert.AreEqual(Sorted[i], shell.Items[i]);
             }
         }
+
         [TestMethod()]
         public void BaseSortTest()
         {
-            //arrange
+            // arrange
             var bases = new AlgorithmBase<int>();
-
-
-
             bases.Items.AddRange(Items);
 
-
-            //act
+            // act
             bases.Sort();
 
             // assert
@@ -131,61 +114,54 @@ namespace AlgorithmTests1
             }
         }
 
-
-
-        [TestMethod()]
-        public void TreeSortTest()
-        {
-            //arrange
-            var tree = new TreeSort<int>();
-
-            tree.Items.AddRange(Items);
-
-
-            //act
-            tree.Sort();
-
-            // assert
-            for (int i = 0; i < Items.Count; i++)
-            {
-                Assert.AreEqual(Sorted[i], tree.Items[i]);
-            }
-        }
-
-        [TestMethod()]
-        public void HeapSortTest()
-        {
-            //arrange
-            var heap = new HeapSort<int>();
-
-            heap.Items.AddRange(Items);
-
-
-            //act
-            heap.Sort();
-
-            // assert
-            for (int i = 0; i < Items.Count; i++)
-            {
-                Assert.AreEqual(Sorted[i], heap.Items[i]);
-            }
-        }
         [TestMethod()]
         public void SelectionSortTest()
         {
-            //arrange
+            // arrange
             var selection = new SelectionSort<int>();
-
             selection.Items.AddRange(Items);
 
-
-            //act
+            // act
             selection.Sort();
 
             // assert
             for (int i = 0; i < Items.Count; i++)
             {
                 Assert.AreEqual(Sorted[i], selection.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void GnomeSortTest()
+        {
+            // arrange
+            var gnome = new GnomeSort<int>();
+            gnome.Items.AddRange(Items);
+
+            // act
+            gnome.Sort();
+
+            // assert
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], gnome.Items[i]);
+            }
+        }
+
+        [TestMethod()]
+        public void RedixSortTest()
+        {
+            // arrange
+            var redix = new RedixSort<int>();
+            redix.Items.AddRange(Items);
+
+            // act
+            redix.Sort();
+
+            // assert
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Assert.AreEqual(Sorted[i], redix.Items[i]);
             }
         }
     }
